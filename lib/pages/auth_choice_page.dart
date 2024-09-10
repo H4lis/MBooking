@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:mbooking/pages/sign_up_page.dart';
 import 'package:mbooking/shared/theme.dart';
 
-class AuthChoicePage extends StatelessWidget {
+import '../widgets/termAndCondition.dart';
+
+class AuthChoicePage extends StatefulWidget {
   const AuthChoicePage({super.key});
 
+  @override
+  State<AuthChoicePage> createState() => _AuthChoicePageState();
+}
+
+class _AuthChoicePageState extends State<AuthChoicePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -117,7 +125,13 @@ class AuthChoicePage extends StatelessWidget {
     return Container(
       padding: EdgeInsets.only(top: 16),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => SignUpPage(),
+              ));
+        },
         style: ElevatedButton.styleFrom(
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(100),
@@ -130,22 +144,6 @@ class AuthChoicePage extends StatelessWidget {
         child: Text(
           "Sign up ",
           style: whiteTextStyle.copyWith(fontWeight: bold, fontSize: 20),
-        ),
-      ),
-    );
-  }
-
-  Widget termAndCondition() {
-    return Padding(
-      padding: const EdgeInsets.only(top: 32, bottom: 28),
-      child: Center(
-        child: SizedBox(
-          width: 290,
-          child: Text(
-            "By sign in or sign up, you agree to our Terms of Service and Privac y Policy",
-            style: greyTextStyle.copyWith(fontSize: 12),
-            textAlign: TextAlign.center,
-          ),
         ),
       ),
     );
