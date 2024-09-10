@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:mbooking/pages/confirm_otp_page.dart';
 import 'package:mbooking/shared/theme.dart';
 import 'package:mbooking/widgets/termAndCondition.dart';
 
@@ -217,7 +218,13 @@ class _SignUpPageState extends State<SignUpPage> {
     return Container(
       margin: EdgeInsets.only(top: 32, bottom: 235),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ConfirmOtpPage(),
+              ));
+        },
         style: ElevatedButton.styleFrom(
             backgroundColor: primaryColor,
             minimumSize: const Size(double.infinity, 56)),
