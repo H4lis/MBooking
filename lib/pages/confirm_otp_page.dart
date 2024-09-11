@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
+import 'package:mbooking/pages/username_page.dart';
 import 'package:mbooking/shared/theme.dart';
 
 class ConfirmOtpPage extends StatefulWidget {
@@ -119,7 +120,13 @@ class _ConfirmOtpPageState extends State<ConfirmOtpPage> {
     return Container(
       margin: const EdgeInsets.only(top: 32, bottom: 235),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => UsernamePage(),
+              ));
+        },
         style: ElevatedButton.styleFrom(
             backgroundColor: primaryColor,
             minimumSize: const Size(double.infinity, 56)),
