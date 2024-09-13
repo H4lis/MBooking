@@ -1,10 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mbooking/pages/main_page.dart';
 import 'package:mbooking/shared/theme.dart';
 
-class UsernamePage extends StatelessWidget {
+class UsernamePage extends StatefulWidget {
   const UsernamePage({super.key});
 
+  @override
+  State<UsernamePage> createState() => _UsernamePageState();
+}
+
+class _UsernamePageState extends State<UsernamePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,7 +85,13 @@ class UsernamePage extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(top: 32, bottom: 16),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => MainPage(),
+              ));
+        },
         style: ElevatedButton.styleFrom(
             backgroundColor: primaryColor,
             minimumSize: const Size(double.infinity, 56)),
